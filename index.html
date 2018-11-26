@@ -18,7 +18,8 @@
         const numberOfYears = parseInt(Math.floor(gapInMonths/12));
         const leftOverMonths = gapInMonths % 12;
 
-        document.getElementById('results').innerHTML = `This person worked ${numberOfYears} and ${leftOverMonths} months.`;
+        // document.getElementById('results').innerHTML = `This person worked for ${numberOfYears} year and ${leftOverMonths} months.`;
+        document.getElementById('results').innerHTML = `This person worked for ${gapInMonths} months.`;
         return false;
       }
     </script>
