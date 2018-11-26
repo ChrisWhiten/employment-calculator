@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+
+    <script>
+      function countEmploymentRange() {
+        const startMonth = document.getElementById('start-month').value;
+        const startYear = document.getElementById('start-year').value;
+
+        const endMonth = document.getElementById('end-month').value;
+        const endYear = document.getElementById('end-year').value;
+
+        const yearGap = endYear - startYear;
+        const monthGap = endMonth - startMonth;
+
+        const gapInMonths = (yearGap * 12) + (monthGap) + 1;
+        const numberOfYears = parseInt(Math.floor(gapInMonths/12));
+        const leftOverMonths = gapInMonths % 12;
+
+        document.getElementById('results').innerHTML = `This person worked ${numberOfYears} and ${leftOverMonths} months.`;
+        return false;
+      }
+    </script>
+  </head>
+
+  <body>
+    <form onsubmit="return countEmploymentRange()">
+      <div class="dates">
+        <div class="date">
+          <h2 class="section-title">Start date</h2>
+          <select id="start-month">
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+          </select>
+
+          <input id="start-year" type="number" value="2010" autofocus>
+        </div>
+        <div class="date">
+            <h2 class="section-title">End date</h2>
+            <select id="start-month">
+              <option value="0">January</option>
+              <option value="1">February</option>
+              <option value="2">March</option>
+              <option value="3">April</option>
+              <option value="4">May</option>
+              <option value="5">June</option>
+              <option value="6">July</option>
+              <option value="7">August</option>
+              <option value="8">September</option>
+              <option value="9">October</option>
+              <option value="10">November</option>
+              <option value="11">December</option>
+            </select>
+      
+              <input id="end-year" type="number" value="2010">
+        </div>
+      </div>
+      <h3 id="results">...</h3>
+      <button type="submit">Calculate</button>
+  </form>
+  </body>
+</html>
