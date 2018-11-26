@@ -18,8 +18,14 @@
         const numberOfYears = parseInt(Math.floor(gapInMonths/12));
         const leftOverMonths = gapInMonths % 12;
 
+        const descriptors = ['magical', 'fantastic', 'stupendous', 'amaaazing', 
+          'magestic', 'incredible', 'extravagent', 'ludicrous', 'swanky', 'marvelous', 
+          'prodigious', 'ice-cream-flavoured', 'delicious', 'sockless', 'coffee-fueled',
+          'mythical'];
+
+        const descriptor = descriptors[Math.floor(Math.random() * descriptors.length)];
         // document.getElementById('results').innerHTML = `This person worked for ${numberOfYears} year and ${leftOverMonths} months.`;
-        document.getElementById('results').innerHTML = `This person worked for ${gapInMonths} magical months.`;
+        document.getElementById('results').innerHTML = `This person worked for ${gapInMonths} ${descriptor} months.`;
         return false;
       }
     </script>
