@@ -18,23 +18,39 @@
         const numberOfYears = parseInt(Math.floor(gapInMonths/12));
         const leftOverMonths = gapInMonths % 12;
 
-        // const descriptors = ['magical', 'fantastic', 'stupendous', 'amaaazing', 
-        //   'magestic', 'incredible', 'extravagant', 'ludicrous', 'swanky', 'marvelous', 
-        //   'prodigious', 'ice-cream-flavoured', 'delicious', 'sockless', 'coffee-fueled',
-        //   'mythical'];
+        const descriptors = ['magical', 'fantastic', 'stupendous', 'amazing', 
+          'magestic', 'incredible', 'extravagant', 'ludicrous', 'swanky', 'marvelous', 
+          'prodigious', 'ice-cream-flavoured', 'delicious', 'sockless', 'coffee-fueled',
+          'mythical', 'gnarly'];
 
-        const descriptors = ['festive', 'snowy', 'tubular', 'gnarly'];
+        // const descriptors = ['festive', 'snowy', 'tubular', 'gnarly'];
 
         const descriptor = descriptors[Math.floor(Math.random() * descriptors.length)];
         // document.getElementById('results').innerHTML = `This human worked for ${numberOfYears} year and ${leftOverMonths} months.`;
         document.getElementById('results').innerHTML = `This human worked for ${gapInMonths} ${descriptor} months.`;
         return false;
       }
+
+      window.onload = function() {
+        // set the gif url
+        const gifUrls = ['https://media.giphy.com/media/3Xw6TGuAa39J2X3a1q/giphy.gif',
+          'https://media.giphy.com/media/IjD2bKEIiyLfi/giphy.gif',
+          'https://media.giphy.com/media/VLu1UgYtmmsLu/giphy.gif',
+          'https://media.giphy.com/media/3NtY188QaxDdC/giphy.gif',
+          'https://media.giphy.com/media/LBiUXRDr899bq/giphy.gif',
+          'https://media.giphy.com/media/87xihBthJ1DkA/giphy.gif',
+          'https://media.giphy.com/media/mbhseRYedlG5W/giphy.gif',
+        ];
+
+        const gifUrl = gifUrls[Math.floor(Math.random() * gifUrls.length)];
+
+        document.getElementById('gif').src = gifUrl;
+      }
     </script>
   </head>
 
   <body>
-    <form onsubmit="return countEmploymentRange()">
+    <form onsubmit="return countEmploymentRange()" style="margin: 1em;">
       <div class="dates">
         <div class="date">
           <h2 class="section-title">Start date</h2>
@@ -78,8 +94,8 @@
       <h3 id="results">...</h3>
       <button type="submit">Calculate</button>
     </form>
-    <div style="text-align: center">
-      <img src="http://1234christmas.com/wp-content/uploads/2013/06/Animated-Santa-Playing-Music.gif" />
+    <div style="margin: 1em;">
+      <img id='gif' />
     </div>
   </body>
 </html>
